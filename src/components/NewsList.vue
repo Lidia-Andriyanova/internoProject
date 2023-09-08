@@ -1,10 +1,19 @@
 <template>
     <div>
-        <NewsItem
-            v-for="newsItem in newsItems" 
-                :newsItem="newsItem"
-                :key="newsItem.id"
-        />
+        <section :class="[$style.news, $style.center]">
+            <div :class="$style.news-heading">
+                <h3 :class="$style.news-heading__title">Articles & News</h3>
+                <p class="news-heading__text">It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using.</p>
+            </div>
+
+            <div class="news-content">
+                <NewsItem
+                    v-for="newsItem in newsItems" 
+                        :newsItem="newsItem"
+                        :key="newsItem.id"
+                />
+            </div>          
+        </section>        
     </div>
 </template>
 
@@ -56,5 +65,25 @@ export default {
 </script>
 
 <style lang="sass" module>
+    .news
+        margin-bottom: 96px
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
 
+        &-heading
+            width: 740px
+            margin-bottom: 93px
+
+            &__title
+                margin-bottom: 10px
+                text-align: center
+                font-family: 'DM Serif Display'
+                font-size: 50px
+                font-style: normal
+                font-weight: 400
+                line-height: 125%
+                letter-spacing: 1px            
+                color: red
 </style>
