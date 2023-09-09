@@ -1,27 +1,38 @@
 <template>
   <div id="app">
-    <NewsList/>
+    <InternoMain/>
   </div>
 </template>
 
 <script>
-import NewsList from './components/NewsList.vue'
+import InternoMain from './components/InternoMain.vue'
 
 export default {
   name: 'App',
   components: {
-    NewsList,
+    InternoMain,
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Jost', 'DM Serif Display', sans-serif;
+  }
+
+  a { 
+    text-decoration: none;
+  }
+
+  .center {
+    padding-left: calc(50% - $siteWidth / 2);
+    padding-right: calc(50% - $siteWidth / 2);
+  }
+
 </style>
