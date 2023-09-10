@@ -5,7 +5,6 @@
                 <h3 class="news-heading__title">Articles & News</h3>
                 <p class="news-heading__text">It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using.</p>
             </div>
-
             <div class="news-content">
                     <NewsItem
                         v-for="newsItem in newsItems" 
