@@ -15,6 +15,7 @@
 
 <script>
 import InternoProjectItem from './InternoProjectItem.vue';
+import { mapGetters, mapActions } from "vuex";
 
 export default {
     name: 'InternoProjectList',
@@ -23,46 +24,22 @@ export default {
     },
     data() {
         return {
-            projectItems: [
-                    {
-                        id: 1,
-                        title: 'Modern Kitchan',
-                        breadcrumbs: ['Decor', 'Artchitecture'],
-                        img: 'product1.jpg',
-                        round: 'top-right',
-                    }, 
-                    {
-                        id: 2,
-                        title: 'Modern Kitchan',
-                        breadcrumbs: ['Decor', 'Artchitecture'],
-                        img: 'product2.jpg',
-                        round: 'top-left',
-                    }, 
-                    {
-                        id: 3,
-                        title: 'Modern Kitchan',
-                        breadcrumbs: ['Decor', 'Artchitecture'],
-                        img: 'product3.jpg',
-                        round: 'bottom-right',
-                    }, 
-                    {
-                        id: 4,
-                        title: 'Modern Kitchan',
-                        breadcrumbs: ['Decor', 'Artchitecture'],
-                        img: 'product4.jpg',
-                        round: 'bottom-left',
-                    },                                                             
-                ]           
+       
         };
     },
 
-    mounted() {
+    methods: {
+        ...mapActions(['getProject']),
         
     },
 
-    methods: {
-        
+    computed: {
+        ...mapGetters(['projectItems']),
     },
+
+    created() {
+        this.getProject();
+    }
 };
 </script>
 
