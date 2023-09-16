@@ -1,21 +1,40 @@
 <template>
   <div id="app">
-    <InternoMain/> 
-    //<BlogPage/> 
+    <CommonHeader/>
+    <!-- <InternoMain/>  -->
+    <!-- <BlogPage/>  -->
+    <ProjectPage/>
+    <CommonFooter/>
   </div>
-</template>
+  </template>
 
 <script>
-import InternoMain from './components/InternoMain.vue'
+import CommonHeader from './components/CommonHeader.vue'
+import CommonFooter from './components//CommonFooter.vue'
+import { mapActions } from "vuex";
+//import InternoMain from './components/InternoMain.vue'
 //import BlogPage from './components/BlogPage.vue'
+import ProjectPage from './pages/ProjectPage.vue'
 
 
 export default {
   name: 'App',
   components: {
-    InternoMain,
+    CommonHeader,
+    CommonFooter,    
+    //InternoMain,
     //BlogPage,
+    ProjectPage,
   },
+
+    methods: {
+         ...mapActions(['getProjectTags', 'getSoldProjects']),
+    },
+
+    created() {
+        this.getProjectTags();
+        this.getSoldProjects();
+    }  
 }
 </script>
 

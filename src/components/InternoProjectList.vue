@@ -9,7 +9,7 @@
                 :projectItem="projectItem"
                 :key="projectItem.id"
             />
-        </div>    
+        </div>     
     </section>
 </template>
 

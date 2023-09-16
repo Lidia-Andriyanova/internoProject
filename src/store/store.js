@@ -3,6 +3,9 @@ export default {
         projectItems: [],
         newsItems: [],
         firstNewsItems: [],
+        projectTags: [],
+        soldProjects: [],
+        
     },
     getters: {
         projectItems(state) {
@@ -13,16 +16,28 @@ export default {
         },        
         firstNewsItems(state) {
             return state.firstNewsItems;
-        },        
+        },  
+        projectTags(state) {
+            return state.projectTags;
+        },           
+        soldProjects(state) {
+            return state.soldProjects;
+        },                
     },
     mutations: {
-        SET_PROJECT(state, project) {
-            state.projectItems = project;
+        SET_PROJECT(state, projects) {
+            state.projectItems = projects;
         },
         SET_NEWS(state, news) {
             state.newsItems = news;
             state.firstNewsItems = news.slice(0, 3);            
-        }        
+        },
+        SET_PROJECT_TAGS(state, tags) {
+            state.projectTags = tags;
+        },         
+        SET_SOLD_PROJECTS(state, soldProjects) {
+            state.soldProjects = soldProjects;
+        },                    
     },
     actions: {
         getProject({commit}) {
@@ -110,6 +125,85 @@ export default {
 
                 commit('SET_NEWS', news);
             }, 1);
-        }        
+        },
+        getProjectTags({commit}) {
+            setTimeout(() => {
+                const projectsTags = ['Bathroom', 'Bedroom', 'Kichen', 'Living Area'];
+                commit('SET_PROJECT_TAGS', projectsTags);
+            }, 1);
+        },  
+        getSoldProjects({commit}) {
+            setTimeout(() => {
+                const soldProjects = [
+                    {
+                        id: 1,
+                        title: 'Minimal Bedroom',
+                        breadcrumbs: ['Decor', 'Artchitecture'],
+                        img: 'soldProject1.jpg',
+                        round: 'none',
+                        tags: ['Bedroom', 'Living Area'],
+                    }, 
+                    {
+                        id: 2,
+                        title: 'Classic Minimal Bedroom',
+                        breadcrumbs: ['Decor', 'Artchitecture'],
+                        img: 'soldProject2.jpg',
+                        round: 'none',
+                        tags: ['Bedroom'],
+                    }, 
+                    {
+                        id: 3,
+                        title: 'Minimal Bedroom',
+                        breadcrumbs: ['Decor', 'Artchitecture'],
+                        img: 'soldProject3.jpg',
+                        round: 'none',
+                        tags: ['Bedroom'],
+                    }, 
+                    {
+                        id: 4,
+                        title: 'Modern Bedroom',
+                        breadcrumbs: ['Decor', 'Artchitecture'],
+                        img: 'soldProject4.jpg',
+                        round: 'none',
+                        tags: ['Bedroom', 'Living Area'],
+                    },  
+                    {
+                        id: 5,
+                        title: 'Minimal Bedroom',
+                        breadcrumbs: ['Decor', 'Artchitecture'],
+                        img: 'soldProject5.jpg',
+                        round: 'none',
+                        tags: ['Bedroom', 'Living Area', 'Bathroom'],
+                    },     
+                    {
+                        id: 6,
+                        title: 'Modern Bedroom',
+                        breadcrumbs: ['Decor', 'Artchitecture'],
+                        img: 'soldProject6.jpg',
+                        round: 'none',
+                        tags: ['Bedroom', 'Living Area'],
+                    },       
+                    {
+                        id: 7,
+                        title: 'System Table',
+                        breadcrumbs: ['Decor', 'Artchitecture'],
+                        img: 'soldProject7.jpg',
+                        round: 'none',
+                        tags: ['Kichen'],
+                    },   
+                    {
+                        id: 8,
+                        title: 'Modern Bedroom',
+                        breadcrumbs: ['Decor', 'Artchitecture'],
+                        img: 'soldProject8.jpg',
+                        round: 'none',
+                        tags: ['Bedroom', 'Bathroom'], 
+                    },                                                                             
+                ];
+
+                commit('SET_SOLD_PROJECTS', soldProjects);
+            }, 1);
+        },                    
+
     }
 }
