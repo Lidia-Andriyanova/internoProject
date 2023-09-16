@@ -2,6 +2,7 @@ export default {
     state: {
         projectItems: [],
         newsItems: [],
+        firstNewsItems: [],
     },
     getters: {
         projectItems(state) {
@@ -10,6 +11,9 @@ export default {
         newsItems(state) {
             return state.newsItems;
         },        
+        firstNewsItems(state) {
+            return state.firstNewsItems;
+        },        
     },
     mutations: {
         SET_PROJECT(state, project) {
@@ -17,6 +21,7 @@ export default {
         },
         SET_NEWS(state, news) {
             state.newsItems = news;
+            state.firstNewsItems = news.slice(0, 3);            
         }        
     },
     actions: {
@@ -80,6 +85,27 @@ export default {
                         category: 'Interior Design',
                         img: 'article3.jpg',
                     },   
+                    {
+                        id: 4,
+                        title: 'Best For Any Office & Business Interior Solution',
+                        date: '25 December,2023',
+                        category: 'Interior Design',
+                        img: 'article4.jpg',
+                    },                                        
+                    {
+                        id: 5,
+                        title: 'Low Cost Latest Invented Interior Designing Ideas.',
+                        date: '22 December,2023',
+                        category: 'Living Design',
+                        img: 'article5.jpg',
+                    },
+                    {
+                        id: 6,
+                        title: 'Best For Any Office & Business Interior Solution',
+                        date: '25 December,2023',
+                        category: 'Interior Design',
+                        img: 'article6.jpg',
+                    },                      
                 ];
 
                 commit('SET_NEWS', news);

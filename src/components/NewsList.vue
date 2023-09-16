@@ -7,7 +7,7 @@
             </div>
             <div class="news-content">
                     <NewsItem
-                        v-for="newsItem in newsItems" 
+                        v-for="newsItem in firstNewsItems" 
                             :newsItem="newsItem"
                             :key="newsItem.id"
                     />
@@ -37,7 +37,7 @@ export default {
     },
 
     computed: {
-        ...mapGetters(['newsItems']),
+        ...mapGetters(['firstNewsItems']),
     },
 
     created() {

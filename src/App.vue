@@ -1,16 +1,20 @@
 <template>
   <div id="app">
-    <InternoMain/>
+    <InternoMain/> 
+    //<BlogPage/> 
   </div>
 </template>
 
 <script>
 import InternoMain from './components/InternoMain.vue'
+//import BlogPage from './components/BlogPage.vue'
+
 
 export default {
   name: 'App',
   components: {
     InternoMain,
+    //BlogPage,
   },
 }
 </script>
