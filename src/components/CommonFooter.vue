@@ -1,7 +1,9 @@
 <template>
     <footer class="footer center">
         <div class="footer-info footer-left">
-            <a class="footer-info__logo" href="index.html"><img :src="require(`@/assets/${logoImg}`)" alt="Logo">Interno</a>
+            <router-link class="footer-info__logo" to="/main">
+                <img :src="require(`@/assets/${logoImg}`)" alt="Logo">Interno
+            </router-link>
             <p class="footer-info__text">
                 It is a long established fact that a reader will be distracted lookings.
             </p>
@@ -12,9 +14,9 @@
         </div>
         <div class="footer-info footer-center">
             <h4 class="footer-info__title">Pages</h4>
-            <a href="#" class="footer-info__link">Home</a>
-            <a href="#" class="footer-info__link">Project</a>
-            <a href="#" class="footer-info__link">Blog</a>
+            <router-link class="footer-info__link" to="/main">Home</router-link>
+            <router-link class="footer-info__link" to="/blog">Blog</router-link>
+            <router-link class="footer-info__link" to="/project">Project</router-link>            
         </div>
         <div class="footer-info footer-right">
             <h4 class="footer-info__title">Contact</h4>
@@ -107,6 +109,10 @@ export default {
                 font-weight: 400;
                 line-height: 150%;
                 letter-spacing: 0.22px;     
+
+                &:hover {
+                   color: $infoColor; 
+                }                
             }
 
             &__social {         

@@ -1,12 +1,14 @@
 <template>
     <header class="header center">
         <div class="header-left">
-            <a class="header-left__link" href="index.html"><img :src="require(`@/assets/${logoImg}`)" alt="Logo">Interno</a>
+            <router-link class="header-left__link" to="/main"> 
+                <img :src="require(`@/assets/${logoImg}`)" alt="Logo">Interno 
+            </router-link>
         </div>
-        <div class="header-right"> 
-            <a class="header-right__link" href="index.html">Home</a>
-            <a class="header-right__link" href="#">Project</a>
-            <a class="header-right__link" href="blog.html">Blog</a>
+        <div class="header-right">  
+            <router-link class="header-right__link" to="/main">Home</router-link>
+            <router-link class="header-right__link" to="/blog">Blog</router-link>
+            <router-link class="header-right__link" to="/project">Project</router-link>
         </div>
     </header>        
 </template>
@@ -67,7 +69,11 @@ export default {
                 font-family: 'Jost';
                 font-size: 20px;
                 font-style: normal;
-                font-weight: 400 
+                font-weight: 400; 
+
+                &:hover {
+                   color: $infoColor; 
+                }
             }
         }
     }

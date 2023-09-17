@@ -1,6 +1,5 @@
 <template>
     <div>
-        <CommonHeader/>
         <div class="articles">
             <img class="articles__img" :src="require(`@/assets/${articlesImg}`)" alt="Articles"> 
             <div class="articles-heading">
@@ -33,21 +32,16 @@
             </div>         
         </section>    
         <NewsBlogPage/>    
-        <CommonFooter/>
     </div>
 </template>
 
 <script>
-import CommonHeader from './CommonHeader.vue'
-import CommonFooter from './CommonFooter.vue'
-import NewsBlogPage from'./NewsBlogPage.vue'
+import NewsBlogPage from'../components/NewsBlogPage.vue'
 
 export default {
     name: 'BlogPage',
 
     components: {
-        CommonHeader,
-        CommonFooter,
         NewsBlogPage,
     },   
 

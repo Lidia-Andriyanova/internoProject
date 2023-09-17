@@ -1,6 +1,5 @@
 <template>
     <div>
-        <CommonHeader/>
         <div class="banner center">
             <div class="banner-content">
                 <img :src="require(`@/assets/${bannerImg}`)" alt="Banner">
@@ -33,23 +32,18 @@
             </div>
         </div>        
         <NewsList/>
-        <CommonFooter/>
     </div>
 </template>
 
 <script>
-import NewsList from './NewsList.vue'
-import CommonHeader from './CommonHeader.vue'
-import CommonFooter from './CommonFooter.vue'
-import InternoProjectList from './InternoProjectList.vue';
+import NewsList from '../components/NewsList.vue'
+import InternoProjectList from '../components/InternoProjectList.vue';
 
 export default {
     name: 'InternoMain',
 
     components: {
         NewsList,
-        CommonHeader,
-        CommonFooter,
         InternoProjectList,
     },   
 

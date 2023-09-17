@@ -1,6 +1,5 @@
 <template>
     <div>
-        <!-- <CommonHeader/> -->
         <div class="projects">
             <img class="projects__img" :src="require(`@/assets/${projectsImg}`)" alt="Project"> 
             <div class="projects-heading">
@@ -48,13 +47,10 @@
                 </button>                       
         </div>                 
         </section>  
-        <!-- <CommonFooter/> -->
     </div>
 </template>
 
 <script>
-// import CommonHeader from './CommonHeader.vue'
-// import CommonFooter from './CommonFooter.vue'
 import InternoProjectItem from '../components/InternoProjectItem.vue';
 //import { mapGetters, mapActions } from "vuex";
 import { mapGetters} from "vuex";
@@ -63,8 +59,6 @@ export default {
     name: 'ProjectPage',
 
     components: {
-        // CommonHeader,
-        // CommonFooter,
         InternoProjectItem
     },   
 
