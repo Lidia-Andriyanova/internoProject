@@ -23,14 +23,6 @@ export default {
             nextImg: 'next.svg',
         };
     },
-
-    mounted() {
-        
-    },
-
-    methods: {
-
-    },
 };
 </script>
 

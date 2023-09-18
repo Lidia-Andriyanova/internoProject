@@ -53,13 +53,6 @@ export default {
         };
     },
 
-    mounted() {
-        
-    },
-
-    methods: {
-        
-    },
 };
 </script>
 

@@ -15,31 +15,18 @@
 
 <script>
 import InternoProjectItem from './InternoProjectItem.vue';
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
     name: 'InternoProjectList',
     components: {
         InternoProjectItem, 
     },
-    data() {
-        return {
-       
-        };
-    },
-
-    methods: {
-        ...mapActions(['getProject']),
-        
-    },
 
     computed: {
         ...mapGetters(['projectItems']),
     },
 
-    created() {
-        this.getProject();
-    }
 };
 </script>
 

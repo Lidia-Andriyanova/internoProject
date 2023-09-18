@@ -20,12 +20,14 @@ export default {
   },
 
     methods: {
-         ...mapActions(['getProjectTags', 'getSoldProjects']),
+         ...mapActions(['getProjectTags', 'getSoldProjects', 'getProject', 'getNews']),
     },
 
     created() {
         this.getProjectTags();
         this.getSoldProjects();
+        this.getProject();
+        this.getNews();
     }  
 }
 </script>
@@ -35,6 +37,7 @@ export default {
   * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 
   body {

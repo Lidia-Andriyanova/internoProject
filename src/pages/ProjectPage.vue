@@ -52,7 +52,6 @@
 
 <script>
 import InternoProjectItem from '../components/InternoProjectItem.vue';
-//import { mapGetters, mapActions } from "vuex";
 import { mapGetters} from "vuex";
 
 export default {
@@ -71,7 +70,6 @@ export default {
     },
 
      methods: {
-    //     ...mapActions(['getProjectTags', 'getSoldProjects']),
         chooseTag(nameTag) {
             if (this.selectedTag === nameTag) {
                 this.selectedTag = '';
@@ -93,10 +91,6 @@ export default {
         }
     },
 
-    // created() {
-    //     this.getProjectTags();
-    //     this.getSoldProjects();
-    // }
 };
 </script>
 
@@ -155,7 +149,7 @@ export default {
     .project-tags {
         display: flex;
         justify-content: center;
-
+        
         &-buttons {
             margin-bottom: 60px;
             border: 1px solid $infoColor; 

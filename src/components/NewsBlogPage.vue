@@ -23,7 +23,7 @@
 
 <script>
 import NewsItem from './NewsItem.vue'
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
     name: 'NewsBlogPage',
@@ -37,18 +37,9 @@ export default {
         };
     },
 
-    methods: {
-        ...mapActions(['getNews']),
-        
-    },
-
     computed: {
         ...mapGetters(['newsItems']),
     },
-
-    created() {
-        this.getNews();
-    }
 };
 </script>
 
