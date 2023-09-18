@@ -5,7 +5,6 @@ export default {
         firstNewsItems: [],
         projectTags: [],
         soldProjects: [],
-        
     },
     getters: {
         projectItems(state) {
@@ -22,7 +21,7 @@ export default {
         },           
         soldProjects(state) {
             return state.soldProjects;
-        },                
+        },         
     },
     mutations: {
         SET_PROJECT(state, projects) {
@@ -37,7 +36,7 @@ export default {
         },         
         SET_SOLD_PROJECTS(state, soldProjects) {
             state.soldProjects = soldProjects;
-        },                    
+        },     
     },
     actions: {
         getProject({commit}) {
@@ -204,6 +203,5 @@ export default {
                 commit('SET_SOLD_PROJECTS', soldProjects);
             }, 1);
         },                    
-
     }
 }

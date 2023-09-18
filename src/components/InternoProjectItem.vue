@@ -5,13 +5,15 @@
             <div class="project-content__heading">
                 <h4 class="project-content__title">{{ projectItem.title }}</h4>
                 <nav class="project-content__nav">
-                    <a v-for="breadcrumb in projectItem.breadcrumbs" 
+                    <router-link to="/projectdetails" v-for="breadcrumb in projectItem.breadcrumbs" 
                         :key="breadcrumb.id"
-                        class="project-content__breadcrumbs" href="#">{{ breadcrumb }}</a>
+                        class="project-content__breadcrumbs">{{ breadcrumb }}</router-link>                        
                 </nav>
             </div>  
-            <button class="project-content__next"><img :src="require(`@/assets/${nextImg}`)" alt="Next">                        
-            </button>
+            <router-link class="project-content__next" to="/projectdetails">
+                <button class="project-content__next"><img :src="require(`@/assets/${nextImg}`)" alt="Next">                        
+                </button>
+            </router-link>
         </div>        
     </div>
 </template>
@@ -66,6 +68,10 @@ export default {
             line-height: 150%;
             letter-spacing: 0.22px;
 
+            &:hover {
+                color: $infoColor;
+            }
+
             &:not(:last-child):after {
                 padding: 6px;
                 color: $textFontColor;
@@ -79,6 +85,10 @@ export default {
             height: 70px;
             border: none;
             border-radius: 35px;        
+
+            &:hover {
+                background-color: $infoColor;
+            }
         }
     }
 

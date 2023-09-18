@@ -5,8 +5,8 @@
             <div class="projects-heading">
                 <h3 class="projects-heading__title">Our Project</h3>
                 <nav class="projects-heading__nav">
-                    <a class="projects-heading__nav__breadcrumbs" href="#">Home</a>
-                    <a class="projects-heading__nav__breadcrumbs" href="#">Project</a>
+                    <router-link to="/main" class="projects-heading__nav__breadcrumbs">Home</router-link>
+                    <router-link to="/project" class="projects-heading__nav__breadcrumbs">Project</router-link>
                 </nav>
            </div>
         </div>       
@@ -135,6 +135,10 @@ export default {
                 font-weight: 400;
                 line-height: 150%;
                 letter-spacing: 0.22px;   
+
+                &:hover {
+                    color: $infoColor;
+                }
 
                 &:not(:last-child):after {
                     padding: 6px;
