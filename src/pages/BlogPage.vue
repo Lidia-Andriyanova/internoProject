@@ -5,8 +5,8 @@
             <div class="articles-heading">
                 <h3 class="articles-heading__title">Articles & News</h3>
                 <nav class="articles-heading__nav">
-                    <a class="articles-heading__nav__breadcrumbs" href="#">Home</a>
-                    <a class="articles-heading__nav__breadcrumbs" href="#">Blog</a>
+                    <router-link to="/main" class="articles-heading__nav__breadcrumbs" href="#">Home</router-link>
+                    <router-link to="/blog" class="articles-heading__nav__breadcrumbs" href="#">Blog</router-link>
                 </nav>
            </div>
         </div>        
@@ -24,9 +24,11 @@
                     </p> 
                     <div class="post-content__info__page">
                         <p class="post-content__info__page__date">26 December,2022</p>
+                        <router-link to="/blogdetails">
                         <button class="post-content__info__page__next">
                             <img :src="require(`@/assets/${nextImg}`)" alt="Next">                        
                         </button>
+                        </router-link>
                     </div>                    
                 </div>
             </div>         
@@ -97,6 +99,10 @@ export default {
                 font-weight: 400;
                 line-height: 150%;
                 letter-spacing: 0.22px;   
+
+                &:hover {
+                    color: $infoColor;
+                }                
 
                 &:not(:last-child):after {
                     padding: 6px;
@@ -194,6 +200,10 @@ export default {
                         height: 52px;
                         border: none;
                         border-radius: 26px;
+
+                        &:hover {
+                           background-color: $infoColor;
+                        }                        
                     }
                 }
             }

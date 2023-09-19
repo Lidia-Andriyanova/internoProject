@@ -6,7 +6,7 @@
                 <div class="banner-content-info">
                     <h3 class="banner-content-info__title">Let Your Home Be Unique</h3>
                     <p class="banner-content-info__text">There are many variations of the passages of lorem Ipsum fromavailable, majority.</p>
-                    <a href="#" class="banner-content-info__link">Get Started<img :src="require(`@/assets/${arrowImg}`)" alt="Arrow"></a>
+                    <router-link to="/project" class="banner-content-info__link">Get Started<img :src="require(`@/assets/${arrowImg}`)" alt="Arrow"></router-link>
                 </div>
             </div>    
         </div>
@@ -114,6 +114,11 @@ export default {
                     img {
                         padding-left: 10px; 
                         padding-top: 10px; 
+                    }
+
+                    &:hover {
+                        color: $infoColor;  
+                        background-color: $textFontColor;
                     }
                 }
             }

@@ -4,8 +4,10 @@
         <h4 class="news-content__article__title">{{ newsItem.title }}</h4>
         <div class="news-content__info">
             <p class="news-content__info__date">{{ newsItem.date }}</p>
-            <button class="news-content__info__next"><img :src="require(`@/assets/${nextImg}`)" alt="Next">                        
-            </button>
+            <router-link to="/blogdetails">
+                <button class="news-content__info__next"><img :src="require(`@/assets/${nextImg}`)" alt="Next">                        
+                </button>
+            </router-link>
         </div>
         <div class="news-content__category">
             <p class="news-content__category__text">{{ newsItem.category }}</p>
@@ -93,6 +95,10 @@ export default {
         height: 52px;
         border: none;
         border-radius: 26px;
+
+            &:hover {
+                background-color: $infoColor;
+            }        
       }
     }
 

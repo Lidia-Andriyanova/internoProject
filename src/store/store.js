@@ -5,6 +5,7 @@ export default {
         firstNewsItems: [],
         projectTags: [],
         soldProjects: [],
+        projectDetails: [],
     },
     getters: {
         projectItems(state) {
@@ -21,7 +22,10 @@ export default {
         },           
         soldProjects(state) {
             return state.soldProjects;
-        },         
+        },       
+        projectDetails(state) {
+            return state.projectDetails;
+        },             
     },
     mutations: {
         SET_PROJECT(state, projects) {
@@ -37,6 +41,9 @@ export default {
         SET_SOLD_PROJECTS(state, soldProjects) {
             state.soldProjects = soldProjects;
         },     
+        SET_PROJECT_DETAILS(state, projectDetails) {
+            state.projectDetails = projectDetails;
+        },            
     },
     actions: {
         getProject({commit}) {
@@ -202,6 +209,20 @@ export default {
 
                 commit('SET_SOLD_PROJECTS', soldProjects);
             }, 1);
+        },     
+        getProjectDetails({commit}) {
+            setTimeout(() => {
+                const projectDetails = [
+                    {id: 1, name: 'Minimal Look Bedrooms', img: 'projectSlider1.jpg', 
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo. In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. Proin tincidunt ligula id purus porttitor.'},
+                    {id: 2, name: 'System Kichen', img: 'projectSlider2.jpg',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo. In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. Proin tincidunt ligula id purus porttitor.'},
+                    {id: 3, name: 'Classic Living Room', img: 'projectSlider3.jpg',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo. In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. Proin tincidunt ligula id purus porttitor.'},
+                ];
+                commit('SET_PROJECT_DETAILS', projectDetails);
+            }, 1);
         },                    
+
     }
 }

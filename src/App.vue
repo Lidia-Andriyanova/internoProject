@@ -20,7 +20,7 @@ export default {
   },
 
     methods: {
-         ...mapActions(['getProjectTags', 'getSoldProjects', 'getProject', 'getNews']),
+         ...mapActions(['getProjectTags', 'getSoldProjects', 'getProject', 'getNews', 'getProjectDetails']),
     },
 
     created() {
@@ -28,6 +28,7 @@ export default {
         this.getSoldProjects();
         this.getProject();
         this.getNews();
+        this.getProjectDetails();
     }  
 }
 </script>
