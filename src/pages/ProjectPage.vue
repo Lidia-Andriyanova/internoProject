@@ -13,20 +13,20 @@
         <div class="tags center">
             <div class="project-tags">
 
-            <div class="project-tags-buttons">
-                <button  
-                    v-for="tag in projectTags" 
-                    :key="tag.id" 
-                    class="project-tags-buttons_button"
-                    @click="chooseTag(tag)"
-                    :style="{
-                        backgroundColor: tag === selectedTag ? '#CDA274' : 'white',
-                        color: tag === selectedTag ? 'white' : 'black',
-                    }"                    
-                    >
-                    {{ tag }}
-                </button>
-            </div>
+                <div class="project-tags-buttons">
+                    <button  
+                        v-for="tag in projectTags" 
+                        :key="tag.id" 
+                        class="project-tags-buttons_button"
+                        @click="chooseTag(tag)"
+                        :style="{
+                            backgroundColor: tag === selectedTag ? '#CDA274' : 'white',
+                            color: tag === selectedTag ? 'white' : 'black',
+                        }"                    
+                        >
+                        {{ tag }}
+                    </button>
+                </div>
             </div>
         </div>
         <section class="project center">

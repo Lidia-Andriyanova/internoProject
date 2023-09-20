@@ -6,6 +6,8 @@ export default {
         projectTags: [],
         soldProjects: [],
         projectDetails: [],
+        articles: [],
+        articleTags: []
     },
     getters: {
         projectItems(state) {
@@ -26,6 +28,12 @@ export default {
         projectDetails(state) {
             return state.projectDetails;
         },             
+        articles(state) {
+            return state.articles;
+        },             
+        articleTags(state) {
+            return state.articleTags;
+        },             
     },
     mutations: {
         SET_PROJECT(state, projects) {
@@ -43,7 +51,13 @@ export default {
         },     
         SET_PROJECT_DETAILS(state, projectDetails) {
             state.projectDetails = projectDetails;
+        },     
+        SET_ARTICLES(state, articles) {
+            state.articles = articles;
         },            
+        SET_ARTICLE_TAGS(state, articleTags) {
+            state.articleTags = articleTags;
+        },     
     },
     actions: {
         getProject({commit}) {
@@ -224,5 +238,27 @@ export default {
             }, 1);
         },                    
 
+        getArticles({commit}) {
+            setTimeout(() => {
+                const articles = [
+                    {id: 1, name: 'Let’s Get Solution for Building Construction Work', img: 'BlogDetails1.jpg', 
+                        text: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which do not look even slightly believable. Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.',
+                        tags: ['Kichen', 'Kichen Planning', 'Building']},
+                    {id: 2, name: 'Design sprints are great', img: 'BlogDetails2.jpg',
+                        text: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which do not look even slightly believable. Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.',
+                        tags: ['Kichen', 'Kichen Planning', 'Architecture']},
+                    {id: 3, name: 'What is the classis Bedroom?', img: 'projectSlider1.jpg',
+                    text: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which do not look even slightly believable. Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.',
+                    tags: ['Bedroom', 'Building']},
+                ];
+                commit('SET_ARTICLES', articles);
+            }, 1);
+        },           
+        getArticleTags({commit}) {
+            setTimeout(() => {
+                const articleTags = ['Kichen', 'Bedroom', 'Building', 'Architecture', 'Kichen Planning', 'Bathroom'];
+                commit('SET_ARTICLE_TAGS', articleTags);
+            }, 1);
+        },          
     }
 }
