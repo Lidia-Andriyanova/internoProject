@@ -74,6 +74,10 @@ export default {
         border-radius: 25px;
         background-color: $siteColor;
         border: 3px solid $titleFontColor;
+
+        &:hover {
+            background-color: $infoColor;
+        }
     }
 }
 </style>

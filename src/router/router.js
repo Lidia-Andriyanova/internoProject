@@ -19,6 +19,10 @@ const routes = [
         component: BlogPage,
     },
     {
+        path: '/blog/:page',
+        component: BlogPage,
+    },    
+    {
         path: '/blogdetails',
         component: BlogDetailsPage,
     },         
@@ -26,6 +30,10 @@ const routes = [
         path: '/project',
         component: ProjectPage,
     },   
+    {
+        path: '/project/:page',
+        component: ProjectPage,
+    },       
     {
         path: '/projectdetails',
         component: ProjectDetailsPage,

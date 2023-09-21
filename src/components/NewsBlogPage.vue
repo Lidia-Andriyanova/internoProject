@@ -5,18 +5,22 @@
         </div>
         <div class="news-content">
                 <NewsItem
-                    v-for="newsItem in newsItems" 
+                    v-for="newsItem in currentProductList" 
                         :newsItem="newsItem"
                         :key="newsItem.id"
                 />
-        </div> 
+        </div>         
         <div class="news-pages">
-            <button class="news-pages__blog">01</button>                        
-            <button class="news-pages__blog">02</button>                        
-            <button class="news-pages__blog">03</button>                       
-            <button class="news-pages__blog">
-                <img :src="require(`@/assets/${nextImg}`)" alt="Next"> 
-            </button>                       
+            <router-link 
+                v-for="page in 4" 
+                :to="`/blog/${page}`" 
+                :key="page"
+            >
+                <button v-if="page <= 3" class="news-pages__blog">0{{ page }}</button>
+                <button v-else class="news-pages__blog">
+                    <img :src="require(`@/assets/${nextImg}`)" alt="Next"> 
+                </button>                  
+            </router-link>
         </div>                
     </section>        
 </template>
@@ -34,12 +38,29 @@ export default {
     data() {
         return {
             nextImg: 'next.svg',  
+            currentPage: 1,
+            itemsPerPage: 6,
         };
     },
 
     computed: {
         ...mapGetters(['newsItems']),
+
+        currentProductList() {
+            const {currentPage, itemsPerPage} = this;
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            return this.newsItems.slice(startIndex, endIndex);
+        }
     },
+
+    watch: {
+        $route(to, from) {
+            const { page } = this.$route.params;
+            if (page) this.currentPage = +page;
+            console.log(to, from);
+        }
+    }
 };
 </script>
 
@@ -120,6 +141,10 @@ export default {
                 background: $siteColor;
                 border: solid $infoColor 2px;
                 border-radius: 26px;   
+
+                &:hover {
+                    background-color: $infoColor;
+                }
             }
         }     
     }

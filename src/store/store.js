@@ -140,7 +140,133 @@ export default {
                         date: '25 December,2023',
                         category: 'Interior Design',
                         img: 'article6.jpg',
-                    },                      
+                    },        
+                    {
+                        id: 7,
+                        title: 'Let’s Get Solution For Building',
+                        date: '26 December,2023',
+                        category: 'Kitchan Design',
+                        img: 'article1.jpg',
+                    },   
+                    {
+                        id: 8,
+                        title: 'Let’s Get Solution For Building',
+                        date: '26 December,2023',
+                        category: 'Kitchan Design',
+                        img: 'article1.jpg',
+                    },    
+                    {
+                        id: 9,
+                        title: 'Let’s Get Solution For Building',
+                        date: '26 December,2023',
+                        category: 'Kitchan Design',
+                        img: 'article1.jpg',
+                    },      
+                    {
+                        id: 10,
+                        title: 'Let’s Get Solution For Building',
+                        date: '26 December,2023',
+                        category: 'Kitchan Design',
+                        img: 'article1.jpg',
+                    },        
+                    {
+                        id: 11,
+                        title: 'Let’s Get Solution For Building',
+                        date: '26 December,2023',
+                        category: 'Kitchan Design',
+                        img: 'article1.jpg',
+                    },   
+                    {
+                        id: 12,
+                        title: 'Let’s Get Solution For Building',
+                        date: '26 December,2023',
+                        category: 'Kitchan Design',
+                        img: 'article1.jpg',
+                    },   
+                    {
+                        id: 13,
+                        title: 'Low Cost Latest Invented Interior Designing Ideas.',
+                        date: '22 December,2023',
+                        category: 'Living Design',
+                        img: 'article2.jpg',
+                    },
+                    {
+                        id: 14,
+                        title: 'Low Cost Latest Invented Interior Designing Ideas.',
+                        date: '22 December,2023',
+                        category: 'Living Design',
+                        img: 'article2.jpg',
+                    },
+                    {
+                        id: 15,
+                        title: 'Low Cost Latest Invented Interior Designing Ideas.',
+                        date: '22 December,2023',
+                        category: 'Living Design',
+                        img: 'article2.jpg',
+                    },      
+                    {
+                        id: 16,
+                        title: 'Low Cost Latest Invented Interior Designing Ideas.',
+                        date: '22 December,2023',
+                        category: 'Living Design',
+                        img: 'article2.jpg',
+                    },
+                    {
+                        id: 17,
+                        title: 'Low Cost Latest Invented Interior Designing Ideas.',
+                        date: '22 December,2023',
+                        category: 'Living Design',
+                        img: 'article2.jpg',
+                    },
+                    {
+                        id: 18,
+                        title: 'Low Cost Latest Invented Interior Designing Ideas.',
+                        date: '22 December,2023',
+                        category: 'Living Design',
+                        img: 'article2.jpg',
+                    },     
+                    {
+                        id: 19,
+                        title: 'Best For Any Office & Business Interior Solution',
+                        date: '25 December,2023',
+                        category: 'Interior Design',
+                        img: 'article3.jpg',
+                    },   
+                    {
+                        id: 20,
+                        title: 'Best For Any Office & Business Interior Solution',
+                        date: '25 December,2023',
+                        category: 'Interior Design',
+                        img: 'article3.jpg',
+                    },   
+                    {
+                        id: 21,
+                        title: 'Best For Any Office & Business Interior Solution',
+                        date: '25 December,2023',
+                        category: 'Interior Design',
+                        img: 'article3.jpg',
+                    },    
+                    {
+                        id: 22,
+                        title: 'Best For Any Office & Business Interior Solution',
+                        date: '25 December,2023',
+                        category: 'Interior Design',
+                        img: 'article3.jpg',
+                    },   
+                    {
+                        id: 23,
+                        title: 'Best For Any Office & Business Interior Solution',
+                        date: '25 December,2023',
+                        category: 'Interior Design',
+                        img: 'article3.jpg',
+                    },   
+                    {
+                        id: 24,
+                        title: 'Best For Any Office & Business Interior Solution',
+                        date: '25 December,2023',
+                        category: 'Interior Design',
+                        img: 'article3.jpg',
+                    },                                                                                                                                                                                                                                                                                
                 ];
 
                 commit('SET_NEWS', news);
@@ -237,7 +363,6 @@ export default {
                 commit('SET_PROJECT_DETAILS', projectDetails);
             }, 1);
         },                    
-
         getArticles({commit}) {
             setTimeout(() => {
                 const articles = [
