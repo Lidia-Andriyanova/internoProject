@@ -31,20 +31,23 @@
         </div>
         <section class="project center">
             <ul>
-                <li v-for="projectItem in filteredProjects" 
+                <li v-for="projectItem in currentProductList" 
                     :key="projectItem.id">
                     <InternoProjectItem :projectItem="projectItem"
                 />
                 </li>
             </ul>            
-
             <div class="news-pages">
-                <button class="news-pages__blog">01</button>                        
-                <button class="news-pages__blog">02</button>                        
-                <button class="news-pages__blog">03</button>                       
-                <button class="news-pages__blog">
-                    <img :src="require(`@/assets/${nextImg}`)" alt="Next"> 
-                </button>                       
+                <router-link 
+                    v-for="page in 4" 
+                    :to="`/project/${page}`" 
+                    :key="page"
+                >
+                    <button v-if="page <= 3" class="news-pages__blog">0{{ page }}</button>
+                    <button v-else class="news-pages__blog">
+                        <img :src="require(`@/assets/${nextImg}`)" alt="Next"> 
+                    </button>                  
+                </router-link>                
         </div>                 
         </section>  
     </div>
@@ -66,6 +69,8 @@ export default {
             nextImg: 'next.svg',  
             projectsImg: 'projects.jpg',  
             selectedTag: '',
+            currentPage: 1,
+            itemsPerPage: 8,            
         };
     },
 
@@ -88,9 +93,23 @@ export default {
             } else {
                 return this.soldProjects
             }
-        }
+        },
+
+        currentProductList() {
+            const {currentPage, itemsPerPage} = this;
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            return this.filteredProjects.slice(startIndex, endIndex);
+        }        
     },
 
+    watch: {
+        $route(to, from) {
+            const { page } = this.$route.params;
+            if (page) this.currentPage = +page;
+            console.log(to, from);
+        }
+    }    
 };
 </script>
 
@@ -216,6 +235,10 @@ export default {
             background: $siteColor;
             border: solid $infoColor 2px;
             border-radius: 26px;   
+
+            &:hover {
+                    background-color: $infoColor;
+            }            
         }
     }    
 
